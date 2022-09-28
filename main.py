@@ -7,10 +7,10 @@ import sys
 from time import sleep
 
 
-CLIENT_ID = 'WI01kxV0UotoC43kN8wvpg'
-SECRET_KEY = 'NIJAbr2f6t5hZpQx59ZWkEFoDpvD1Q'
-USERNAME = 'autotiktok'
-PASSWORD = 'autott1999'
+CLIENT_ID = 'client_id.txt'
+SECRET_KEY = 'secret_key.txt'
+USERNAME = 'username.txt'
+PASSWORD = 'password.txt'
 
 sys.path.append("C:\\FFmpeg\\bin")
 
@@ -25,11 +25,12 @@ reddit = praw.Reddit(
 
 )
 
+# Subreddit escolhido para baixar videos
 subreddit = reddit.subreddit("FunnyAnimals")
 
 count = 1
 
-# Pega o link dos últimos posts com vídeo
+# Pega o link dos últimos posts com vídeo (últimos 50 posts)
 for submission in subreddit.new(limit=50):
 
     if 'https://v.redd.it/' in submission.url:
@@ -80,5 +81,3 @@ for submission in subreddit.new(limit=50):
         count = count + 1
     else:
         print('Post Sem Vídeo')
-
-# C:\Users\Eliezer\Desktop\RedditVideoDownloader\venv\Scripts\activate.ps1
